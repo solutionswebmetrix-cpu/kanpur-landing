@@ -200,20 +200,31 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 0 24px;
     width: min(100%, 1600px);
     margin-inline: auto;
     padding-inline: clamp(20px, 4vw, 60px);
+    min-height: 85px;
+    flex-wrap: nowrap;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
     font-size: 1.45rem;
     font-weight: 800;
     color: white;
     white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 60px;
+}
+
+.logo-image {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .logo-icon {
@@ -233,11 +244,12 @@ img {
 
 .nav {
     display: flex;
-    gap: 32px;
+    gap: 35px;
     align-items: center;
     white-space: nowrap;
-    flex: 1;
+    flex: 1 1 auto;
     justify-content: center;
+    flex-wrap: nowrap;
 }
 
 .nav a {
@@ -380,6 +392,8 @@ img {
     align-items: center;
     gap: 14px;
     white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 12px;
 }
 
 .header-call {
@@ -471,11 +485,11 @@ img {
 
 .hero-inner {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 50% / 50% split */
+    grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
     gap: clamp(30px, 5vw, 60px);
     align-items: center;
     justify-content: space-between;
-    height: calc(100vh - 85px);
+    min-height: calc(100vh - 85px);
     width: 100%;
     max-width: 1920px;
     margin-inline: auto;
@@ -486,6 +500,7 @@ img {
 
 .hero-content {
     color: white;
+    max-width: 640px;
 }
 
 .hero-eyebrow {
@@ -509,6 +524,7 @@ img {
     line-height: 1.15;
     font-weight: 800;
     margin-bottom: 18px;
+    color: #fff;
 }
 
 .hero-content h1 .accent {
@@ -550,8 +566,12 @@ img {
 }
 
 /* Hero Illustration */
-.hero-illustration {
-    position: relative;
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 45%;
+    min-width: 500px;
     width: 100%;
     height: 100%;
     margin-inline: 0;
@@ -569,8 +589,8 @@ img {
 
 .hero-img {
     width: 100%;
-    height: 100%;
-    max-width: 100%;
+    max-width: 700px;
+    height: 520px;
     display: block;
     border-radius: 30px;
     object-fit: cover;
@@ -582,35 +602,39 @@ img {
     transition: transform 0.4s ease;
 }
 
-.hero-illustration:hover .hero-img {
+.hero-image:hover .hero-img {
     transform: scale(1.02);
 }
 
 /* Responsive Layouts */
 @media (max-width: 1440px) {
     .hero-inner {
-        grid-template-columns: 55fr 45fr; /* 55% / 45% split for laptop */
+        grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
     }
-    .hero-illustration {
-        max-width: 100%;
-        height: 100%;
+    .hero-image {
+        min-width: min(420px, 100%);
     }
 }
 
 @media (max-width: 992px) {
     .hero-inner {
         grid-template-columns: 1fr;
-        height: auto;
-        min-height: calc(100vh - 85px);
+        min-height: auto;
         padding-top: 40px;
         padding-bottom: 40px;
     }
-    .hero-illustration {
-        max-width: 100%;
-        height: 400px;
+    .hero-content {
+        max-width: none;
+    }
+    .hero-image {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        order: 2;
     }
     .hero-img {
-        height: 100%;
+        height: 420px;
+        max-width: 100%;
     }
 }
 
@@ -618,12 +642,11 @@ img {
     .hero-inner {
         grid-template-columns: 1fr;
     }
-    .hero-illustration {
-        max-width: 100%;
-        height: auto;
+    .hero-image {
+        min-width: 0;
     }
     .hero-img {
-        height: auto;
+        height: 320px;
     }
 }
 
@@ -631,8 +654,8 @@ img {
     .hero-inner {
         padding-inline: 20px;
     }
-    .hero-illustration {
-        max-height: 300px;
+    .hero-img {
+        height: 280px;
     }
 }
 

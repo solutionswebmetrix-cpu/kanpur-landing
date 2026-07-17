@@ -41,7 +41,7 @@ const Hero = memo(() => {
             </a>
           </div>
         </div>
-        <div className="hero-illustration reveal delay-3">
+        <div className="hero-image reveal delay-3">
           <img src={IMG_HERO_SOLAR} alt="Premium rooftop solar installation" loading="eager" className="hero-img" />
         </div>
       </div>
