@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { FaStar, FaUsers, FaDollarSign, FaShieldAlt, FaCalendarCheck, FaPhone, FaWhatsapp } from 'react-icons/fa';
-import { COMPANY, IMG_SOLAR_HOME, whatsappLink } from '../config/site';
+import { COMPANY, IMG_HERO_SOLAR, whatsappLink } from '../config/site';
 import { useModal } from '../context/ModalContext';
 
 const Hero = memo(() => {
@@ -42,7 +42,7 @@ const Hero = memo(() => {
           </div>
         </div>
         <div className="hero-illustration reveal delay-3">
-          <img src={IMG_SOLAR_HOME} alt="Luxury home rooftop solar installation" loading="lazy" className="hero-img" />
+          <img src={IMG_HERO_SOLAR} alt="Premium rooftop solar installation" loading="eager" className="hero-img" />
         </div>
       </div>
     </section>

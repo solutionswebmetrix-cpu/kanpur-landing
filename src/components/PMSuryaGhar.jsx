@@ -13,7 +13,7 @@ const PMSuryaGhar = () => {
         <div className="section-header reveal">
           <span className="section-tag">Government Scheme</span>
           <h2>PM Surya Ghar <span className="accent">Muft Bijli Yojana</span></h2>
-          <p className="section-desc">Get up to ₹1,08,000 subsidy on rooftop solar. We handle the complete process!</p>
+          <p className="section-desc">Get up to ₹1,08,000 subsidy on rooftop solar for 3 kW and above systems. We handle the complete process!</p>
         </div>
         <div className="pm-grid reveal">
           <div className="pm-col">

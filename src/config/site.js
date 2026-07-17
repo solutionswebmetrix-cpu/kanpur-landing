@@ -13,6 +13,7 @@ export const COMPANY = {
 
 // Placeholder for the image URLs since we moved them to public/
 export const IMG_SOLAR_HOME = "/banner.png";
+export const IMG_HERO_SOLAR = "/Residential Rooftop Solar.png";
 export const IMG_SOLAR_COMMERCIAL = "/Commercial Solar.png";
 export const IMG_SOLAR_INDUSTRIAL = "/Industrial Solar.png";
 export const IMG_SOLAR_STORAGE = "/Solar Inverter.png";
@@ -27,7 +28,7 @@ export const SOLAR_SERVICES = [
   ["On Grid Solar System", "on-grid-solar", "Grid-tied solar systems that feed excess energy to the grid.", ["Net Metering", "Lower Bills", "No Battery", "Government Subsidy"], "fa-plug", "/On Grid Solar System.png"],
   ["Off Grid Solar System", "off-grid-solar", "Standalone solar systems with battery backup for remote areas.", ["Power Backup", "No Grid", "Energy Independence", "Rural Friendly"], "fa-battery-full", "/Off Grid Solar System.png"],
   ["Hybrid Solar System", "hybrid-solar", "Combination of on-grid and off-grid for maximum efficiency.", ["Both Grid + Battery", "24/7 Power", "Smart Management", "Backup Option"], "fa-sync", "/Hybrid Solar System.png"],
-  ["PM Surya Ghar Solar", "pm-surya-ghar", "Avail up to ₹78,000 government subsidy on rooftop solar.", ["Govt Subsidy", "300 Units Free", "Authorized Vendor", "Complete Paperwork"], "fa-sun", "/Residential Rooftop Solar.png"],
+  ["PM Surya Ghar Solar", "pm-surya-ghar", "Avail up to ₹1,08,000 government subsidy on rooftop solar for 3 kW and above systems.", ["Up to ₹1,08,000 Subsidy", "MNRE Approved Components", "Authorized Installation Partner", "Complete Documentation & Net Metering Support"], "fa-sun", "/Residential Rooftop Solar.png"],
   ["Solar Panel Installation", "solar-panel-installation", "Professional solar panel installation with precision.", ["Expert Installation", "Safety Standards", "Quality Panels", "After Service"], "fa-solar-panel", "/Solar Panel Installation.png"],
   ["Solar Water Pump", "solar-water-pump", "Solar-powered water pumps for irrigation and domestic use.", ["Low Running Cost", "Govt Subsidy", "Rural Friendly", "Low Maintenance"], "fa-water", "/Solar Water Pump.png"],
   ["Solar Atta Chakki", "solar-atta-chakki", "Solar-powered flour mills for villages and homes.", ["Cost Effective", "Rural Friendly", "Low Maintenance", "Govt Subsidy"], "fa-bread-slice", "/Solar Atta Chakki.png"],
@@ -129,10 +130,10 @@ export const PM_SURYA_GHAR = {
     "Bank account details",
   ],
   benefits: [
-    "Up to ₹1,08,000 Government Subsidy",
-    "25–30 Years Solar Panel Performance Warranty",
-    "Reduced Electricity Bills",
-    "Environment Friendly Green Energy",
+    "Up to ₹1,08,000 Subsidy",
+    "MNRE Approved Components",
+    "Authorized Installation Partner",
+    "Complete Documentation & Net Metering Support",
   ],
   subsidy: [
     "1 kW – 2 kW: ₹45,000 – ₹90,000",
