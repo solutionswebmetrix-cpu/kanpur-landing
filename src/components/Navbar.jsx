@@ -28,7 +28,7 @@ const Navbar = () => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
       <div className="container header-inner">
         <Link to="/" className="logo" onClick={handleNavClick}>
-          <span className="logo-icon"><FaSolarPanel /></span>
+          <img src="/logo.png" alt="Kanpur Services" style={{ maxHeight: '50px', marginRight: '10px' }} />
           Kanpur <span>Services</span>
         </Link>
         

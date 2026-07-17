@@ -9,7 +9,7 @@ const Footer = memo(() => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col">
-            <h3><FaSolarPanel /> Kanpur Services</h3>
+            <h3><img src="/logo.png" alt="Kanpur Services" style={{ maxHeight: '40px', marginRight: '10px' }} /> Kanpur Services</h3>
             <p>Kanpur's #1 Solar Energy Company. Complete rooftop solar solutions, PM Surya Ghar Yojana subsidy assistance, home appliance repair and more.</p>
             <div className="social-links">
               <a href="#"><FaFacebookF /></a>
