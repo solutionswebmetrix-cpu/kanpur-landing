@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import PMSuryaGhar from '../components/PMSuryaGhar';
@@ -13,6 +14,8 @@ import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 
 const Home = () => {
+  const location = useLocation();
+
   useEffect(() => {
     const reveal = () => {
       const reveals = document.querySelectorAll(".reveal");
@@ -32,6 +35,20 @@ const Home = () => {
     reveal();
     return () => window.removeEventListener("scroll", reveal);
   }, []);
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const timeoutId = window.setTimeout(() => {
+        const element = document.getElementById(location.state.scrollTo);
+        if (element) {
+          const top = element.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }, 150);
+
+      return () => window.clearTimeout(timeoutId);
+    }
+  }, [location.state?.scrollTo]);
 
   return (
     <>

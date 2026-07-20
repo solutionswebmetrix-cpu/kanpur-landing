@@ -1,18 +1,39 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaSolarPanel, FaChevronDown, FaBars, FaTimes, FaPhone, FaWhatsapp } from 'react-icons/fa';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
+
+      const sections = ['home', 'services', 'pm-surya-ghar', 'gallery', 'reviews', 'faq', 'contact'];
+      const offset = 140;
+      let currentSection = 'home';
+
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= offset && rect.bottom >= offset) {
+            currentSection = section;
+          }
+        }
+      });
+
+      setActiveSection(currentSection);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -24,6 +45,25 @@ const Navbar = () => {
     setServicesDropdownOpen(false);
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const top = element.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
+
+  const handleSectionNavigation = (sectionId) => {
+    handleNavClick();
+
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
+      return;
+    }
+
+    scrollToSection(sectionId);
+  };
+
   return (
     <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
       <div className="container header-inner">
@@ -33,14 +73,24 @@ const Navbar = () => {
         </Link>
         
         <nav className={`nav ${mobileMenuOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={handleNavClick}>Home</Link>
+          <a
+            href="#home"
+            className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleSectionNavigation('home');
+            }}
+          >
+            Home
+          </a>
           <div className="nav-dropdown">
             <a 
               href="#services" 
-              className="nav-dropdown-trigger" 
+              className={`nav-dropdown-trigger ${activeSection === 'services' ? 'active' : ''}`} 
               onClick={(e) => {
                 e.preventDefault();
                 toggleServicesDropdown();
+                handleSectionNavigation('services');
               }}
             >
               Services <FaChevronDown />
@@ -72,11 +122,56 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <Link to="/services" onClick={handleNavClick}>PM Surya Ghar</Link>
-          <Link to="/gallery" onClick={handleNavClick}>Gallery</Link>
-          <Link to="/" onClick={handleNavClick}>Reviews</Link>
-          <Link to="/" onClick={handleNavClick}>FAQ</Link>
-          <Link to="/contact" onClick={handleNavClick}>Contact</Link>
+          <a
+            href="#pm-surya-ghar"
+            className={`nav-link ${activeSection === 'pm-surya-ghar' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleSectionNavigation('pm-surya-ghar');
+            }}
+          >
+            PM Surya Ghar
+          </a>
+          <a
+            href="#gallery"
+            className={`nav-link ${activeSection === 'gallery' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleSectionNavigation('gallery');
+            }}
+          >
+            Gallery
+          </a>
+          <a
+            href="#reviews"
+            className={`nav-link ${activeSection === 'reviews' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleSectionNavigation('reviews');
+            }}
+          >
+            Reviews
+          </a>
+          <a
+            href="#faq"
+            className={`nav-link ${activeSection === 'faq' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleSectionNavigation('faq');
+            }}
+          >
+            FAQ
+          </a>
+          <a
+            href="#contact"
+            className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleSectionNavigation('contact');
+            }}
+          >
+            Contact
+          </a>
         </nav>
         
         <div className="header-actions">
