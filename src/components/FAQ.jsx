@@ -1,6 +1,7 @@
 import React, { memo, useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import { SOLAR_FAQS } from '../config/site';
+import SectionHeader from './SectionHeader';
 
 const FAQ = memo(() => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -12,11 +13,12 @@ const FAQ = memo(() => {
   return (
     <section className="section faq" id="faq">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">Questions?</span>
-          <h2>Frequently Asked <span className="accent">Questions</span></h2>
-          <p className="section-desc">Everything you need to know about solar and our services</p>
-        </div>
+        <SectionHeader
+          badge="Questions?"
+          title={<>Frequently Asked <span className="accent">Questions</span></>}
+          subtitle="Everything you need to know about solar and our services"
+          className="reveal"
+        />
         <div className="faq-wrapper">
           {SOLAR_FAQS.map((faq, index) => (
             <div

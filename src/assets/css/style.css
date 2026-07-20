@@ -67,8 +67,16 @@ img {
 }
 
 .section-header {
+    position: relative;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+    z-index: 1;
+}
+
+.section-badge,
+.section-tag {
+    position: relative;
+    z-index: 3;
 }
 
 .section-tag {
@@ -84,23 +92,32 @@ img {
     margin-bottom: 12px;
 }
 
-.section-header h2 {
+.section-header h2,
+.section-title {
     font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-weight: 800;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    color: #F5B32C;
 }
 
-.section-header h2 .accent {
-    color: var(--gold);
-    background: linear-gradient(135deg, #f5b840 0%, #e59d0d 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.section-header h2 .accent,
+.section-title .accent {
+    color: #F5B32C;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: currentColor;
+    background-clip: initial;
 }
 
-.section-desc {
+.section-desc,
+.section-subtitle {
     color: var(--text-muted);
     font-size: 1.05rem;
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
 }
 
 /* ===== Buttons ===== */
@@ -220,11 +237,16 @@ img {
     margin-right: 60px;
 }
 
+.logo-text {
+    color: #ffffff;
+}
+
 .logo-image {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     flex-shrink: 0;
+    image-rendering: auto;
 }
 
 .logo-icon {
@@ -399,6 +421,7 @@ img {
 .header-call {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     padding: 11px 24px;
     background: var(--gold-grad);
@@ -407,6 +430,7 @@ img {
     font-weight: 600;
     transition: var(--transition);
     font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .header-call:hover {
@@ -416,6 +440,7 @@ img {
 
 .header-call .phone-num {
     font-size: 0.95rem;
+    line-height: 1;
 }
 
 .header-whatsapp {
@@ -1334,6 +1359,7 @@ img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    object-position: center;
 }
 
 .gallery-caption {

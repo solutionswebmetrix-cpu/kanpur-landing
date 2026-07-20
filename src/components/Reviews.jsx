@@ -1,16 +1,18 @@
 import React, { memo } from 'react';
 import { FaStar, FaUserCircle } from 'react-icons/fa';
 import { REVIEWS } from '../config/site';
+import SectionHeader from './SectionHeader';
 
 const Reviews = memo(() => {
   return (
     <section className="section reviews" id="reviews">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">Happy Customers</span>
-          <h2>Customer <span className="accent">Reviews</span></h2>
-          <p className="section-desc">What our customers say about us</p>
-        </div>
+        <SectionHeader
+          badge="Happy Customers"
+          title={<>Customer <span className="accent">Reviews</span></>}
+          subtitle="What our customers say about us"
+          className="reveal"
+        />
         <div className="reviews-grid reveal">
           {REVIEWS.map((review, index) => (
             <div key={index} className="review-card">

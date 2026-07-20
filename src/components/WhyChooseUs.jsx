@@ -1,16 +1,18 @@
 import React, { memo } from 'react';
 import { WHY_CHOOSE_US } from '../config/site';
 import { iconMap } from '../utils/iconMap';
+import SectionHeader from './SectionHeader';
 
 const WhyChooseUs = memo(() => {
   return (
     <section className="section why-choose-us" id="why-choose-us">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">Why Choose Us</span>
-          <h2>Why Choose <span className="accent">Kanpur Services</span>?</h2>
-          <p className="section-desc">We are the trusted partner you need for your solar journey</p>
-        </div>
+        <SectionHeader
+          badge="Why Choose Us"
+          title={<>Why Choose <span className="accent">Kanpur Services</span>?</>}
+          subtitle="We are the trusted partner you need for your solar journey"
+          className="reveal"
+        />
         <div className="why-choose-grid">
           {WHY_CHOOSE_US.map((item, index) => {
             const IconComponent = iconMap[item[1]];

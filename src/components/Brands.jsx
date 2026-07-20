@@ -2,16 +2,18 @@
 import React from 'react';
 import { SOLAR_BRANDS } from '../config/site';
 import { iconMap } from '../utils/iconMap';
+import SectionHeader from './SectionHeader';
 
 const Brands = () => {
   return (
     <section className="section brands" id="brands">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">Our Partners</span>
-          <h2>Trusted <span className="accent">Solar Brands</span></h2>
-          <p className="section-desc">We work with only the best solar brands</p>
-        </div>
+        <SectionHeader
+          badge="Our Partners"
+          title={<>Trusted <span className="accent">Solar Brands</span></>}
+          subtitle="We work with only the best solar brands"
+          className="reveal"
+        />
         <div className="brands-grid">
           {SOLAR_BRANDS.map((brand, index) => {
             const IconComponent = iconMap[brand[1]];

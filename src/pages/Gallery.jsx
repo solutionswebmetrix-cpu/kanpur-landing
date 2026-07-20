@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import GalleryComponent from '../components/Gallery';
 import Contact from '../components/Contact';
+import SectionHeader from '../components/SectionHeader';
 
 const Gallery = () => {
   useEffect(() => {
@@ -27,11 +28,11 @@ const Gallery = () => {
     <>
       <div style={{ paddingTop: '100px' }}>
         <div className="container">
-          <div className="section-header">
-            <span className="section-tag">Our Gallery</span>
-            <h2>Our <span className="accent">Project Gallery</span></h2>
-            <p className="section-desc">Check out our solar installation projects</p>
-          </div>
+          <SectionHeader
+            badge="Our Gallery"
+            title={<>Our <span className="accent">Project Gallery</span></>}
+            subtitle="Check out our solar installation projects"
+          />
         </div>
       </div>
       <GalleryComponent />

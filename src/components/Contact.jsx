@@ -2,6 +2,7 @@ import React, { memo, useState } from 'react';
 import { FaMapMarkerAlt, FaPhone, FaWhatsapp, FaEnvelope, FaClock, FaStar, FaPaperPlane, FaCheck } from 'react-icons/fa';
 import { COMPANY, SOLAR_SERVICES, SECONDARY_SERVICES, whatsappLink } from '../config/site';
 import api from '../api/axios';
+import SectionHeader from './SectionHeader';
 
 const Contact = memo(() => {
   const [formData, setFormData] = useState({
@@ -51,11 +52,12 @@ const Contact = memo(() => {
   return (
     <section className="section contact-premium" id="contact">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">Contact Us</span>
-          <h2>Get In <span className="accent">In Touch</span></h2>
-          <p className="section-desc">Ready to switch to solar? Contact us today for a free consultation</p>
-        </div>
+        <SectionHeader
+          badge="CONTACT US"
+          title={<>Get In <span className="accent">Touch</span></>}
+          subtitle="Ready to switch to solar? Contact us today for a free consultation."
+          className="reveal"
+        />
         <div className="contact-premium-grid reveal">
           <div className="contact-premium-info">
             <div className="contact-info-card">

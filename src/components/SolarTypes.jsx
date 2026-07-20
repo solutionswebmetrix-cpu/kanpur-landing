@@ -4,6 +4,7 @@ import { useModal } from '../context/ModalContext';
 import { SOLAR_TYPES } from '../config/site';
 import { FaCheck, FaCalendarCheck } from 'react-icons/fa';
 import { iconMap } from '../utils/iconMap';
+import SectionHeader from './SectionHeader';
 
 const SolarTypes = () => {
   const { openModal } = useModal();
@@ -11,11 +12,12 @@ const SolarTypes = () => {
   return (
     <section className="section why-solar" id="solar-types">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">Solar Solutions</span>
-          <h2>Choose Your <span className="accent">Solar Type</span></h2>
-          <p className="section-desc">Select the best solar system for your needs</p>
-        </div>
+        <SectionHeader
+          badge="Solar Solutions"
+          title={<>Choose Your <span className="accent">Solar Type</span></>}
+          subtitle="Select the best solar system for your needs"
+          className="reveal"
+        />
         <div className="solar-types-grid">
           {SOLAR_TYPES.map((type, index) => {
             const IconComponent = iconMap[type[5]];

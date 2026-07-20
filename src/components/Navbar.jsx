@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="container header-inner">
         <Link to="/" className="logo" onClick={handleNavClick}>
           <img src="/logo.png" alt="Kanpur Services" className="logo-image" />
-          Kanpur <span>Services</span>
+          <span className="logo-text">Kanpur Services</span>
         </Link>
         
         <nav className={`nav ${mobileMenuOpen ? 'open' : ''}`}>
@@ -82,7 +82,7 @@ const Navbar = () => {
         <div className="header-actions">
           <a href="tel:+918090444479" className="header-call">
             <FaPhone />
-            <span className="phone-num">8090444479</span>
+            <span className="phone-num">Call Now</span>
           </a>
           <a 
             href="https://wa.me/918090444479" 

@@ -3,6 +3,7 @@ import { FaCheck, FaCalendarCheck } from 'react-icons/fa';
 import { SOLAR_SERVICES } from '../config/site';
 import { useModal } from '../context/ModalContext';
 import { iconMap } from '../utils/iconMap';
+import SectionHeader from './SectionHeader';
 
 const Services = memo(() => {
   const { openModal } = useModal();
@@ -10,11 +11,12 @@ const Services = memo(() => {
   return (
     <section className="section services" id="services">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">What We Offer</span>
-          <h2>Our Solar <span className="accent">Services</span></h2>
-          <p className="section-desc">Complete range of solar energy solutions for your home, office or industry</p>
-        </div>
+        <SectionHeader
+          badge="What We Offer"
+          title={<>Our Solar <span className="accent">Services</span></>}
+          subtitle="Complete range of solar energy solutions for your home, office or industry"
+          className="reveal"
+        />
         <div className="services-grid">
           {SOLAR_SERVICES.map((service, index) => {
             const IconComponent = iconMap[service[4]];

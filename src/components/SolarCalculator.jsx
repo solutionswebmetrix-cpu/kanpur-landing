@@ -1,5 +1,6 @@
 import React, { memo, useState, useEffect } from 'react';
 import { FaSolarPanel, FaRupeeSign, FaDollarSign, FaMoneyBill, FaCalendar, FaBolt } from 'react-icons/fa';
+import SectionHeader from './SectionHeader';
 
 const SolarCalculator = memo(() => {
   const [monthlyBill, setMonthlyBill] = useState(4000);
@@ -14,7 +15,7 @@ const SolarCalculator = memo(() => {
     const bill = parseFloat(monthlyBill) || 0;
     const size = Math.max(1, Math.ceil(bill / 1300));
     const cost = size * 60000;
-    const subsidyAmount = size >= 3 ? 78000 : size * 30000;
+    const subsidyAmount = size >= 3 ? 108000 : size * 30000;
     const savings = Math.round(bill * 0.75);
     const netCost = cost - subsidyAmount;
     const paybackYears = (netCost / (savings * 12)).toFixed(1);
@@ -30,11 +31,12 @@ const SolarCalculator = memo(() => {
   return (
     <section className="section calculator" id="calculator">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">Calculate Savings</span>
-          <h2>Solar Savings <span className="accent">Calculator</span></h2>
-          <p className="section-desc">Estimate your monthly and annual savings with solar</p>
-        </div>
+        <SectionHeader
+          badge="Calculate Savings"
+          title={<>Solar Savings <span className="accent">Calculator</span></>}
+          subtitle="Estimate your monthly and annual savings with solar"
+          className="reveal"
+        />
         <div className="calculator-wrapper reveal">
           <div className="calc-form">
             <div className="field">

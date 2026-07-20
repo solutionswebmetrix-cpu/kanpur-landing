@@ -90,8 +90,8 @@ export const GALLERY_IMAGES = [
   ["Commercial Projects", IMG_SOLAR_COMMERCIAL],
   ["Industrial Projects", IMG_SOLAR_INDUSTRIAL],
   ["Farm Houses", IMG_SOLAR_OFFGRID],
-  ["Schools", IMG_SOLAR_HOME],
-  ["Hospitals", IMG_SOLAR_COMMERCIAL],
+  ["Schools", IMG_SOLAR_HYBRID],
+  ["Hospitals", IMG_SOLAR_STORAGE],
 ];
 
 export const WHY_SOLAR = [

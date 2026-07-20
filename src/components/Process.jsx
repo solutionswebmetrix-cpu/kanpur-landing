@@ -3,16 +3,18 @@ import React from 'react';
 import { INSTALLATION_PROCESS } from '../config/site';
 import { FaArrowDown } from 'react-icons/fa';
 import { iconMap } from '../utils/iconMap';
+import SectionHeader from './SectionHeader';
 
 const Process = () => {
   return (
     <section className="section process" id="process">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">How It Works</span>
-          <h2>Solar Installation <span className="accent">Process</span></h2>
-          <p className="section-desc">7 simple steps to switch to solar</p>
-        </div>
+        <SectionHeader
+          badge="How It Works"
+          title={<>Solar Installation <span className="accent">Process</span></>}
+          subtitle="7 simple steps to switch to solar"
+          className="reveal"
+        />
         <div className="process-wrapper">
           {INSTALLATION_PROCESS.map((step, index) => {
             const IconComponent = iconMap[step[2]];

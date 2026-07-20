@@ -3,6 +3,7 @@ import React from 'react';
 import { useModal } from '../context/ModalContext';
 import { PM_SURYA_GHAR } from '../config/site';
 import { FaCheckCircle, FaStar, FaRupeeSign, FaList, FaFileAlt, FaRocket } from 'react-icons/fa';
+import SectionHeader from './SectionHeader';
 
 const PMSuryaGhar = () => {
   const { openModal } = useModal();
@@ -10,11 +11,12 @@ const PMSuryaGhar = () => {
   return (
     <section className="section pm-surya-ghar" id="pm-surya-ghar">
       <div className="container">
-        <div className="section-header reveal">
-          <span className="section-tag">Government Scheme</span>
-          <h2>PM Surya Ghar <span className="accent">Muft Bijli Yojana</span></h2>
-          <p className="section-desc">Get up to ₹1,08,000 subsidy on rooftop solar for 3 kW and above systems. We handle the complete process!</p>
-        </div>
+        <SectionHeader
+          badge="Government Scheme"
+          title={<>PM Surya Ghar <span className="accent">Muft Bijli Yojana</span></>}
+          subtitle="Get up to ₹1,08,000 subsidy on rooftop solar for 3 kW and above systems. We handle the complete process!"
+          className="reveal"
+        />
         <div className="pm-grid reveal">
           <div className="pm-col">
             <h3><FaCheckCircle /> Eligibility</h3>
