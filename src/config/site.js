@@ -8,7 +8,7 @@ export const COMPANY = {
   address: "4/1011 Awas Vikas-3, Ambedkar Puram, Kalyanpur, Kanpur, Uttar Pradesh - 208017",
   rating: "4.6",
   reviews: "230+",
-  hours: "Open Daily 9:00 AM - 8:00 PM"
+  hours: "Open Daily 9:00 AM - 9:00 PM"
 };
 
 // Placeholder for the image URLs since we moved them to public/
